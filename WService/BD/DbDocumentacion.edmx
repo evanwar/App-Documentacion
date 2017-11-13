@@ -1,0 +1,1332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dbDocumentacionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cat_Areausuaria">
+          <Key>
+            <PropertyRef Name="intCatAreaUsuaria" />
+          </Key>
+          <Property Name="intCatAreaUsuaria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vchAreausuaria" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="bitActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cat_CargosSistemas">
+          <Key>
+            <PropertyRef Name="intCargoId" />
+          </Key>
+          <Property Name="intCargoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vchDescripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="bitActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cat_Clasificacion">
+          <Key>
+            <PropertyRef Name="intClasificacionID" />
+          </Key>
+          <Property Name="intClasificacionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vchClasificacion" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="bitActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cat_EquipoSistemas">
+          <Key>
+            <PropertyRef Name="intEquipoSistemasId" />
+          </Key>
+          <Property Name="intEquipoSistemasId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="intCargoId" Type="int" Nullable="false" />
+          <Property Name="vchNombre" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="vchApellidoPaterno" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="vchApellidoMaterno" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="vchRFC" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="bitActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cat_Responsables">
+          <Key>
+            <PropertyRef Name="intCatResponsableId" />
+          </Key>
+          <Property Name="intCatResponsableId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vchNombre" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="vchApellidoPaterno" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="vchApellidoMaterno" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="vchRFC" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="bitResponsablePrincipal" Type="bit" Nullable="false" />
+          <Property Name="bitActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cat_Servidores">
+          <Key>
+            <PropertyRef Name="intCatServidorId" />
+          </Key>
+          <Property Name="intCatServidorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vchServidor" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="bitActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cat_TipoArchivo">
+          <Key>
+            <PropertyRef Name="intTipoArchivo" />
+          </Key>
+          <Property Name="intTipoArchivo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vchTipoArchivo" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="vchExtension" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="bitActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cat_TipoCambio">
+          <Key>
+            <PropertyRef Name="intTipoCambioId" />
+          </Key>
+          <Property Name="intTipoCambioId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vchTipoCambio" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="bitActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cat_TipoObjeto">
+          <Key>
+            <PropertyRef Name="intTipoObjeto" />
+          </Key>
+          <Property Name="intTipoObjeto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vchTipoObjeto" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="bitActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_AreaUsuaria">
+          <Key>
+            <PropertyRef Name="intAreaUsuariaId" />
+          </Key>
+          <Property Name="intAreaUsuariaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="intDatosGeneralesId" Type="int" Nullable="false" />
+          <Property Name="intCatAreaUsuaria" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_CodigoDB">
+          <Key>
+            <PropertyRef Name="intCodigoDBID" />
+          </Key>
+          <Property Name="intCodigoDBID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="intControlBDID" Type="int" Nullable="false" />
+          <Property Name="intTipoCambioId" Type="int" Nullable="false" />
+          <Property Name="intTipoObjeto" Type="int" Nullable="false" />
+          <Property Name="vchBase" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="intOrden" Type="int" Nullable="false" />
+          <Property Name="vchNombreObjeto" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="vchDescripcion" Type="varchar(max)" Nullable="false" />
+          <Property Name="vchRuta" Type="varchar(max)" Nullable="false" />
+          <Property Name="bitActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_CodigoFuente">
+          <Key>
+            <PropertyRef Name="intCodigoFuenteID" />
+          </Key>
+          <Property Name="intCodigoFuenteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="intControlCodigoID" Type="int" Nullable="false" />
+          <Property Name="intTipoCambioId" Type="int" Nullable="false" />
+          <Property Name="vchRuta" Type="varchar(max)" Nullable="false" />
+          <Property Name="vchArchivo" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="intTipoArchivo" Type="int" Nullable="false" />
+          <Property Name="vchProposito" Type="varchar(max)" Nullable="false" />
+          <Property Name="bitActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_ControlCambiosBDConfig">
+          <Key>
+            <PropertyRef Name="intControlBDID" />
+          </Key>
+          <Property Name="intControlBDID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="intDatosGeneralesId" Type="int" Nullable="false" />
+          <Property Name="datFechayHoraLiberacion" Type="datetime" Nullable="false" />
+          <Property Name="intCatServidorId" Type="int" Nullable="false" />
+          <Property Name="intClasificacionID" Type="int" Nullable="false" />
+          <Property Name="datFechaElaboracion" Type="datetime" Nullable="false" />
+          <Property Name="vchAdicionales" Type="varchar(max)" Nullable="false" />
+          <Property Name="bitActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_ControlCambiosCodigoConfig">
+          <Key>
+            <PropertyRef Name="intControlCodigoID" />
+          </Key>
+          <Property Name="intControlCodigoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="intDatosGeneralesId" Type="int" Nullable="false" />
+          <Property Name="datFechayHoraLiberacion" Type="datetime" Nullable="false" />
+          <Property Name="intCatServidorId" Type="int" Nullable="false" />
+          <Property Name="intClasificacionID" Type="int" Nullable="false" />
+          <Property Name="datFechaElaboracion" Type="datetime" Nullable="false" />
+          <Property Name="vchAdicionales" Type="varchar(max)" Nullable="false" />
+          <Property Name="bitActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_DatosGenerales">
+          <Key>
+            <PropertyRef Name="intDatosGeneralesId" />
+          </Key>
+          <Property Name="intDatosGeneralesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vchNombreRequerimiento" Type="varchar(max)" Nullable="false" />
+          <Property Name="vchFolio" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="vchModulo" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="sdatFechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="intusuarioId" Type="int" />
+          <Property Name="bitActivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_Responsables">
+          <Key>
+            <PropertyRef Name="intResponsableId" />
+          </Key>
+          <Property Name="intResponsableId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="intAreaUsuariaId" Type="int" Nullable="false" />
+          <Property Name="intCatResponsableId" Type="int" Nullable="false" />
+          <Property Name="bitActibo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_Sistemas">
+          <Key>
+            <PropertyRef Name="intSistemasId" />
+          </Key>
+          <Property Name="intSistemasId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="intDatosGeneralesId" Type="int" Nullable="false" />
+          <Property Name="intEquipoSistemasId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="intusuarioId" />
+          </Key>
+          <Property Name="intusuarioId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vchNombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="vchApellido" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="vchUsuario" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="bitActivo" Type="bit" Nullable="false" />
+          <Property Name="sdatFechaIngreso" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Cat_EquipoSistemas_Cat_CargosSistemas">
+          <End Role="Cat_CargosSistemas" Type="Self.Cat_CargosSistemas" Multiplicity="1" />
+          <End Role="Cat_EquipoSistemas" Type="Self.Cat_EquipoSistemas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_CargosSistemas">
+              <PropertyRef Name="intCargoId" />
+            </Principal>
+            <Dependent Role="Cat_EquipoSistemas">
+              <PropertyRef Name="intCargoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_AreaUsuaria_Cat_Areausuaria">
+          <End Role="Cat_Areausuaria" Type="Self.Cat_Areausuaria" Multiplicity="1" />
+          <End Role="tbl_AreaUsuaria" Type="Self.tbl_AreaUsuaria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_Areausuaria">
+              <PropertyRef Name="intCatAreaUsuaria" />
+            </Principal>
+            <Dependent Role="tbl_AreaUsuaria">
+              <PropertyRef Name="intCatAreaUsuaria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_AreaUsuaria_tbl_DatosGenerales">
+          <End Role="tbl_DatosGenerales" Type="Self.tbl_DatosGenerales" Multiplicity="1" />
+          <End Role="tbl_AreaUsuaria" Type="Self.tbl_AreaUsuaria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_DatosGenerales">
+              <PropertyRef Name="intDatosGeneralesId" />
+            </Principal>
+            <Dependent Role="tbl_AreaUsuaria">
+              <PropertyRef Name="intDatosGeneralesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_CodigoDB_Cat_TipoCambio">
+          <End Role="Cat_TipoCambio" Type="Self.Cat_TipoCambio" Multiplicity="1" />
+          <End Role="tbl_CodigoDB" Type="Self.tbl_CodigoDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_TipoCambio">
+              <PropertyRef Name="intTipoCambioId" />
+            </Principal>
+            <Dependent Role="tbl_CodigoDB">
+              <PropertyRef Name="intTipoCambioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_CodigoDB_Cat_TipoObjeto">
+          <End Role="Cat_TipoObjeto" Type="Self.Cat_TipoObjeto" Multiplicity="1" />
+          <End Role="tbl_CodigoDB" Type="Self.tbl_CodigoDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_TipoObjeto">
+              <PropertyRef Name="intTipoObjeto" />
+            </Principal>
+            <Dependent Role="tbl_CodigoDB">
+              <PropertyRef Name="intTipoObjeto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_CodigoDB_tbl_ControlCambiosBDConfig">
+          <End Role="tbl_ControlCambiosBDConfig" Type="Self.tbl_ControlCambiosBDConfig" Multiplicity="1" />
+          <End Role="tbl_CodigoDB" Type="Self.tbl_CodigoDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ControlCambiosBDConfig">
+              <PropertyRef Name="intControlBDID" />
+            </Principal>
+            <Dependent Role="tbl_CodigoDB">
+              <PropertyRef Name="intControlBDID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_CodigoFuente_Cat_TipoArchivo">
+          <End Role="Cat_TipoArchivo" Type="Self.Cat_TipoArchivo" Multiplicity="1" />
+          <End Role="tbl_CodigoFuente" Type="Self.tbl_CodigoFuente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_TipoArchivo">
+              <PropertyRef Name="intTipoArchivo" />
+            </Principal>
+            <Dependent Role="tbl_CodigoFuente">
+              <PropertyRef Name="intTipoArchivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_CodigoFuente_Cat_TipoCambio">
+          <End Role="Cat_TipoCambio" Type="Self.Cat_TipoCambio" Multiplicity="1" />
+          <End Role="tbl_CodigoFuente" Type="Self.tbl_CodigoFuente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_TipoCambio">
+              <PropertyRef Name="intTipoCambioId" />
+            </Principal>
+            <Dependent Role="tbl_CodigoFuente">
+              <PropertyRef Name="intTipoCambioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_CodigoFuente_tbl_ControlCambiosCodigoConfig">
+          <End Role="tbl_ControlCambiosCodigoConfig" Type="Self.tbl_ControlCambiosCodigoConfig" Multiplicity="1" />
+          <End Role="tbl_CodigoFuente" Type="Self.tbl_CodigoFuente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ControlCambiosCodigoConfig">
+              <PropertyRef Name="intControlCodigoID" />
+            </Principal>
+            <Dependent Role="tbl_CodigoFuente">
+              <PropertyRef Name="intControlCodigoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_ControlCambiosBDConfig_Cat_Clasificacion">
+          <End Role="Cat_Clasificacion" Type="Self.Cat_Clasificacion" Multiplicity="1" />
+          <End Role="tbl_ControlCambiosBDConfig" Type="Self.tbl_ControlCambiosBDConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_Clasificacion">
+              <PropertyRef Name="intClasificacionID" />
+            </Principal>
+            <Dependent Role="tbl_ControlCambiosBDConfig">
+              <PropertyRef Name="intClasificacionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_ControlCambiosBDConfig_Cat_Servidores">
+          <End Role="Cat_Servidores" Type="Self.Cat_Servidores" Multiplicity="1" />
+          <End Role="tbl_ControlCambiosBDConfig" Type="Self.tbl_ControlCambiosBDConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_Servidores">
+              <PropertyRef Name="intCatServidorId" />
+            </Principal>
+            <Dependent Role="tbl_ControlCambiosBDConfig">
+              <PropertyRef Name="intCatServidorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_ControlCambiosBDConfig_tbl_DatosGenerales">
+          <End Role="tbl_DatosGenerales" Type="Self.tbl_DatosGenerales" Multiplicity="1" />
+          <End Role="tbl_ControlCambiosBDConfig" Type="Self.tbl_ControlCambiosBDConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_DatosGenerales">
+              <PropertyRef Name="intDatosGeneralesId" />
+            </Principal>
+            <Dependent Role="tbl_ControlCambiosBDConfig">
+              <PropertyRef Name="intDatosGeneralesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_ControlCambiosCodigoConfig_Cat_Clasificacion">
+          <End Role="Cat_Clasificacion" Type="Self.Cat_Clasificacion" Multiplicity="1" />
+          <End Role="tbl_ControlCambiosCodigoConfig" Type="Self.tbl_ControlCambiosCodigoConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_Clasificacion">
+              <PropertyRef Name="intClasificacionID" />
+            </Principal>
+            <Dependent Role="tbl_ControlCambiosCodigoConfig">
+              <PropertyRef Name="intClasificacionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_ControlCambiosCodigoConfig_Cat_Servidores">
+          <End Role="Cat_Servidores" Type="Self.Cat_Servidores" Multiplicity="1" />
+          <End Role="tbl_ControlCambiosCodigoConfig" Type="Self.tbl_ControlCambiosCodigoConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_Servidores">
+              <PropertyRef Name="intCatServidorId" />
+            </Principal>
+            <Dependent Role="tbl_ControlCambiosCodigoConfig">
+              <PropertyRef Name="intCatServidorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_ControlCambiosCodigoConfig_tbl_DatosGenerales">
+          <End Role="tbl_DatosGenerales" Type="Self.tbl_DatosGenerales" Multiplicity="1" />
+          <End Role="tbl_ControlCambiosCodigoConfig" Type="Self.tbl_ControlCambiosCodigoConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_DatosGenerales">
+              <PropertyRef Name="intDatosGeneralesId" />
+            </Principal>
+            <Dependent Role="tbl_ControlCambiosCodigoConfig">
+              <PropertyRef Name="intDatosGeneralesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_DatosGenerales_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="tbl_DatosGenerales" Type="Self.tbl_DatosGenerales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="intusuarioId" />
+            </Principal>
+            <Dependent Role="tbl_DatosGenerales">
+              <PropertyRef Name="intusuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Responsables_Cat_Responsables">
+          <End Role="Cat_Responsables" Type="Self.Cat_Responsables" Multiplicity="1" />
+          <End Role="tbl_Responsables" Type="Self.tbl_Responsables" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_Responsables">
+              <PropertyRef Name="intCatResponsableId" />
+            </Principal>
+            <Dependent Role="tbl_Responsables">
+              <PropertyRef Name="intCatResponsableId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Responsables_tbl_AreaUsuaria">
+          <End Role="tbl_AreaUsuaria" Type="Self.tbl_AreaUsuaria" Multiplicity="1" />
+          <End Role="tbl_Responsables" Type="Self.tbl_Responsables" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_AreaUsuaria">
+              <PropertyRef Name="intAreaUsuariaId" />
+            </Principal>
+            <Dependent Role="tbl_Responsables">
+              <PropertyRef Name="intAreaUsuariaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Sistemas_Cat_EquipoSistemas">
+          <End Role="Cat_EquipoSistemas" Type="Self.Cat_EquipoSistemas" Multiplicity="1" />
+          <End Role="tbl_Sistemas" Type="Self.tbl_Sistemas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_EquipoSistemas">
+              <PropertyRef Name="intEquipoSistemasId" />
+            </Principal>
+            <Dependent Role="tbl_Sistemas">
+              <PropertyRef Name="intEquipoSistemasId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Sistemas_tbl_DatosGenerales">
+          <End Role="tbl_DatosGenerales" Type="Self.tbl_DatosGenerales" Multiplicity="1" />
+          <End Role="tbl_Sistemas" Type="Self.tbl_Sistemas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_DatosGenerales">
+              <PropertyRef Name="intDatosGeneralesId" />
+            </Principal>
+            <Dependent Role="tbl_Sistemas">
+              <PropertyRef Name="intDatosGeneralesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbDocumentacionModelStoreContainer">
+          <EntitySet Name="Cat_Areausuaria" EntityType="Self.Cat_Areausuaria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cat_CargosSistemas" EntityType="Self.Cat_CargosSistemas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cat_Clasificacion" EntityType="Self.Cat_Clasificacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cat_EquipoSistemas" EntityType="Self.Cat_EquipoSistemas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cat_Responsables" EntityType="Self.Cat_Responsables" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cat_Servidores" EntityType="Self.Cat_Servidores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cat_TipoArchivo" EntityType="Self.Cat_TipoArchivo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cat_TipoCambio" EntityType="Self.Cat_TipoCambio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cat_TipoObjeto" EntityType="Self.Cat_TipoObjeto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_AreaUsuaria" EntityType="Self.tbl_AreaUsuaria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_CodigoDB" EntityType="Self.tbl_CodigoDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_CodigoFuente" EntityType="Self.tbl_CodigoFuente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ControlCambiosBDConfig" EntityType="Self.tbl_ControlCambiosBDConfig" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ControlCambiosCodigoConfig" EntityType="Self.tbl_ControlCambiosCodigoConfig" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_DatosGenerales" EntityType="Self.tbl_DatosGenerales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Responsables" EntityType="Self.tbl_Responsables" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Sistemas" EntityType="Self.tbl_Sistemas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Cat_EquipoSistemas_Cat_CargosSistemas" Association="Self.FK_Cat_EquipoSistemas_Cat_CargosSistemas">
+            <End Role="Cat_CargosSistemas" EntitySet="Cat_CargosSistemas" />
+            <End Role="Cat_EquipoSistemas" EntitySet="Cat_EquipoSistemas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_AreaUsuaria_Cat_Areausuaria" Association="Self.FK_tbl_AreaUsuaria_Cat_Areausuaria">
+            <End Role="Cat_Areausuaria" EntitySet="Cat_Areausuaria" />
+            <End Role="tbl_AreaUsuaria" EntitySet="tbl_AreaUsuaria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_AreaUsuaria_tbl_DatosGenerales" Association="Self.FK_tbl_AreaUsuaria_tbl_DatosGenerales">
+            <End Role="tbl_DatosGenerales" EntitySet="tbl_DatosGenerales" />
+            <End Role="tbl_AreaUsuaria" EntitySet="tbl_AreaUsuaria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_CodigoDB_Cat_TipoCambio" Association="Self.FK_tbl_CodigoDB_Cat_TipoCambio">
+            <End Role="Cat_TipoCambio" EntitySet="Cat_TipoCambio" />
+            <End Role="tbl_CodigoDB" EntitySet="tbl_CodigoDB" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_CodigoDB_Cat_TipoObjeto" Association="Self.FK_tbl_CodigoDB_Cat_TipoObjeto">
+            <End Role="Cat_TipoObjeto" EntitySet="Cat_TipoObjeto" />
+            <End Role="tbl_CodigoDB" EntitySet="tbl_CodigoDB" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_CodigoDB_tbl_ControlCambiosBDConfig" Association="Self.FK_tbl_CodigoDB_tbl_ControlCambiosBDConfig">
+            <End Role="tbl_ControlCambiosBDConfig" EntitySet="tbl_ControlCambiosBDConfig" />
+            <End Role="tbl_CodigoDB" EntitySet="tbl_CodigoDB" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_CodigoFuente_Cat_TipoArchivo" Association="Self.FK_tbl_CodigoFuente_Cat_TipoArchivo">
+            <End Role="Cat_TipoArchivo" EntitySet="Cat_TipoArchivo" />
+            <End Role="tbl_CodigoFuente" EntitySet="tbl_CodigoFuente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_CodigoFuente_Cat_TipoCambio" Association="Self.FK_tbl_CodigoFuente_Cat_TipoCambio">
+            <End Role="Cat_TipoCambio" EntitySet="Cat_TipoCambio" />
+            <End Role="tbl_CodigoFuente" EntitySet="tbl_CodigoFuente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_CodigoFuente_tbl_ControlCambiosCodigoConfig" Association="Self.FK_tbl_CodigoFuente_tbl_ControlCambiosCodigoConfig">
+            <End Role="tbl_ControlCambiosCodigoConfig" EntitySet="tbl_ControlCambiosCodigoConfig" />
+            <End Role="tbl_CodigoFuente" EntitySet="tbl_CodigoFuente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_ControlCambiosBDConfig_Cat_Clasificacion" Association="Self.FK_tbl_ControlCambiosBDConfig_Cat_Clasificacion">
+            <End Role="Cat_Clasificacion" EntitySet="Cat_Clasificacion" />
+            <End Role="tbl_ControlCambiosBDConfig" EntitySet="tbl_ControlCambiosBDConfig" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_ControlCambiosBDConfig_Cat_Servidores" Association="Self.FK_tbl_ControlCambiosBDConfig_Cat_Servidores">
+            <End Role="Cat_Servidores" EntitySet="Cat_Servidores" />
+            <End Role="tbl_ControlCambiosBDConfig" EntitySet="tbl_ControlCambiosBDConfig" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_ControlCambiosBDConfig_tbl_DatosGenerales" Association="Self.FK_tbl_ControlCambiosBDConfig_tbl_DatosGenerales">
+            <End Role="tbl_DatosGenerales" EntitySet="tbl_DatosGenerales" />
+            <End Role="tbl_ControlCambiosBDConfig" EntitySet="tbl_ControlCambiosBDConfig" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_ControlCambiosCodigoConfig_Cat_Clasificacion" Association="Self.FK_tbl_ControlCambiosCodigoConfig_Cat_Clasificacion">
+            <End Role="Cat_Clasificacion" EntitySet="Cat_Clasificacion" />
+            <End Role="tbl_ControlCambiosCodigoConfig" EntitySet="tbl_ControlCambiosCodigoConfig" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_ControlCambiosCodigoConfig_Cat_Servidores" Association="Self.FK_tbl_ControlCambiosCodigoConfig_Cat_Servidores">
+            <End Role="Cat_Servidores" EntitySet="Cat_Servidores" />
+            <End Role="tbl_ControlCambiosCodigoConfig" EntitySet="tbl_ControlCambiosCodigoConfig" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_ControlCambiosCodigoConfig_tbl_DatosGenerales" Association="Self.FK_tbl_ControlCambiosCodigoConfig_tbl_DatosGenerales">
+            <End Role="tbl_DatosGenerales" EntitySet="tbl_DatosGenerales" />
+            <End Role="tbl_ControlCambiosCodigoConfig" EntitySet="tbl_ControlCambiosCodigoConfig" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_DatosGenerales_Usuarios" Association="Self.FK_tbl_DatosGenerales_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="tbl_DatosGenerales" EntitySet="tbl_DatosGenerales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Responsables_Cat_Responsables" Association="Self.FK_tbl_Responsables_Cat_Responsables">
+            <End Role="Cat_Responsables" EntitySet="Cat_Responsables" />
+            <End Role="tbl_Responsables" EntitySet="tbl_Responsables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Responsables_tbl_AreaUsuaria" Association="Self.FK_tbl_Responsables_tbl_AreaUsuaria">
+            <End Role="tbl_AreaUsuaria" EntitySet="tbl_AreaUsuaria" />
+            <End Role="tbl_Responsables" EntitySet="tbl_Responsables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Sistemas_Cat_EquipoSistemas" Association="Self.FK_tbl_Sistemas_Cat_EquipoSistemas">
+            <End Role="Cat_EquipoSistemas" EntitySet="Cat_EquipoSistemas" />
+            <End Role="tbl_Sistemas" EntitySet="tbl_Sistemas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Sistemas_tbl_DatosGenerales" Association="Self.FK_tbl_Sistemas_tbl_DatosGenerales">
+            <End Role="tbl_DatosGenerales" EntitySet="tbl_DatosGenerales" />
+            <End Role="tbl_Sistemas" EntitySet="tbl_Sistemas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbDocumentacionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cat_Areausuaria">
+          <Key>
+            <PropertyRef Name="intCatAreaUsuaria" />
+          </Key>
+          <Property Name="intCatAreaUsuaria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vchAreausuaria" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bitActivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tbl_AreaUsuaria" Relationship="Self.FK_tbl_AreaUsuaria_Cat_Areausuaria" FromRole="Cat_Areausuaria" ToRole="tbl_AreaUsuaria" />
+        </EntityType>
+        <EntityType Name="Cat_CargosSistemas">
+          <Key>
+            <PropertyRef Name="intCargoId" />
+          </Key>
+          <Property Name="intCargoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vchDescripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bitActivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Cat_EquipoSistemas" Relationship="Self.FK_Cat_EquipoSistemas_Cat_CargosSistemas" FromRole="Cat_CargosSistemas" ToRole="Cat_EquipoSistemas" />
+        </EntityType>
+        <EntityType Name="Cat_Clasificacion">
+          <Key>
+            <PropertyRef Name="intClasificacionID" />
+          </Key>
+          <Property Name="intClasificacionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vchClasificacion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bitActivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tbl_ControlCambiosBDConfig" Relationship="Self.FK_tbl_ControlCambiosBDConfig_Cat_Clasificacion" FromRole="Cat_Clasificacion" ToRole="tbl_ControlCambiosBDConfig" />
+          <NavigationProperty Name="tbl_ControlCambiosCodigoConfig" Relationship="Self.FK_tbl_ControlCambiosCodigoConfig_Cat_Clasificacion" FromRole="Cat_Clasificacion" ToRole="tbl_ControlCambiosCodigoConfig" />
+        </EntityType>
+        <EntityType Name="Cat_EquipoSistemas">
+          <Key>
+            <PropertyRef Name="intEquipoSistemasId" />
+          </Key>
+          <Property Name="intEquipoSistemasId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="intCargoId" Type="Int32" Nullable="false" />
+          <Property Name="vchNombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vchApellidoPaterno" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vchApellidoMaterno" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vchRFC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bitActivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Cat_CargosSistemas" Relationship="Self.FK_Cat_EquipoSistemas_Cat_CargosSistemas" FromRole="Cat_EquipoSistemas" ToRole="Cat_CargosSistemas" />
+          <NavigationProperty Name="tbl_Sistemas" Relationship="Self.FK_tbl_Sistemas_Cat_EquipoSistemas" FromRole="Cat_EquipoSistemas" ToRole="tbl_Sistemas" />
+        </EntityType>
+        <EntityType Name="Cat_Responsables">
+          <Key>
+            <PropertyRef Name="intCatResponsableId" />
+          </Key>
+          <Property Name="intCatResponsableId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vchNombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vchApellidoPaterno" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vchApellidoMaterno" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vchRFC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bitResponsablePrincipal" Type="Boolean" Nullable="false" />
+          <Property Name="bitActivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tbl_Responsables" Relationship="Self.FK_tbl_Responsables_Cat_Responsables" FromRole="Cat_Responsables" ToRole="tbl_Responsables" />
+        </EntityType>
+        <EntityType Name="Cat_Servidores">
+          <Key>
+            <PropertyRef Name="intCatServidorId" />
+          </Key>
+          <Property Name="intCatServidorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vchServidor" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bitActivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tbl_ControlCambiosBDConfig" Relationship="Self.FK_tbl_ControlCambiosBDConfig_Cat_Servidores" FromRole="Cat_Servidores" ToRole="tbl_ControlCambiosBDConfig" />
+          <NavigationProperty Name="tbl_ControlCambiosCodigoConfig" Relationship="Self.FK_tbl_ControlCambiosCodigoConfig_Cat_Servidores" FromRole="Cat_Servidores" ToRole="tbl_ControlCambiosCodigoConfig" />
+        </EntityType>
+        <EntityType Name="Cat_TipoArchivo">
+          <Key>
+            <PropertyRef Name="intTipoArchivo" />
+          </Key>
+          <Property Name="intTipoArchivo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vchTipoArchivo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vchExtension" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bitActivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tbl_CodigoFuente" Relationship="Self.FK_tbl_CodigoFuente_Cat_TipoArchivo" FromRole="Cat_TipoArchivo" ToRole="tbl_CodigoFuente" />
+        </EntityType>
+        <EntityType Name="Cat_TipoCambio">
+          <Key>
+            <PropertyRef Name="intTipoCambioId" />
+          </Key>
+          <Property Name="intTipoCambioId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vchTipoCambio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bitActivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tbl_CodigoDB" Relationship="Self.FK_tbl_CodigoDB_Cat_TipoCambio" FromRole="Cat_TipoCambio" ToRole="tbl_CodigoDB" />
+          <NavigationProperty Name="tbl_CodigoFuente" Relationship="Self.FK_tbl_CodigoFuente_Cat_TipoCambio" FromRole="Cat_TipoCambio" ToRole="tbl_CodigoFuente" />
+        </EntityType>
+        <EntityType Name="Cat_TipoObjeto">
+          <Key>
+            <PropertyRef Name="intTipoObjeto" />
+          </Key>
+          <Property Name="intTipoObjeto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vchTipoObjeto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bitActivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tbl_CodigoDB" Relationship="Self.FK_tbl_CodigoDB_Cat_TipoObjeto" FromRole="Cat_TipoObjeto" ToRole="tbl_CodigoDB" />
+        </EntityType>
+        <EntityType Name="tbl_AreaUsuaria">
+          <Key>
+            <PropertyRef Name="intAreaUsuariaId" />
+          </Key>
+          <Property Name="intAreaUsuariaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="intDatosGeneralesId" Type="Int32" Nullable="false" />
+          <Property Name="intCatAreaUsuaria" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cat_Areausuaria" Relationship="Self.FK_tbl_AreaUsuaria_Cat_Areausuaria" FromRole="tbl_AreaUsuaria" ToRole="Cat_Areausuaria" />
+          <NavigationProperty Name="tbl_DatosGenerales" Relationship="Self.FK_tbl_AreaUsuaria_tbl_DatosGenerales" FromRole="tbl_AreaUsuaria" ToRole="tbl_DatosGenerales" />
+          <NavigationProperty Name="tbl_Responsables" Relationship="Self.FK_tbl_Responsables_tbl_AreaUsuaria" FromRole="tbl_AreaUsuaria" ToRole="tbl_Responsables" />
+        </EntityType>
+        <EntityType Name="tbl_CodigoDB">
+          <Key>
+            <PropertyRef Name="intCodigoDBID" />
+          </Key>
+          <Property Name="intCodigoDBID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="intControlBDID" Type="Int32" Nullable="false" />
+          <Property Name="intTipoCambioId" Type="Int32" Nullable="false" />
+          <Property Name="intTipoObjeto" Type="Int32" Nullable="false" />
+          <Property Name="vchBase" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="intOrden" Type="Int32" Nullable="false" />
+          <Property Name="vchNombreObjeto" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vchDescripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vchRuta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bitActivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Cat_TipoCambio" Relationship="Self.FK_tbl_CodigoDB_Cat_TipoCambio" FromRole="tbl_CodigoDB" ToRole="Cat_TipoCambio" />
+          <NavigationProperty Name="Cat_TipoObjeto" Relationship="Self.FK_tbl_CodigoDB_Cat_TipoObjeto" FromRole="tbl_CodigoDB" ToRole="Cat_TipoObjeto" />
+          <NavigationProperty Name="tbl_ControlCambiosBDConfig" Relationship="Self.FK_tbl_CodigoDB_tbl_ControlCambiosBDConfig" FromRole="tbl_CodigoDB" ToRole="tbl_ControlCambiosBDConfig" />
+        </EntityType>
+        <EntityType Name="tbl_CodigoFuente">
+          <Key>
+            <PropertyRef Name="intCodigoFuenteID" />
+          </Key>
+          <Property Name="intCodigoFuenteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="intControlCodigoID" Type="Int32" Nullable="false" />
+          <Property Name="intTipoCambioId" Type="Int32" Nullable="false" />
+          <Property Name="vchRuta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vchArchivo" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="intTipoArchivo" Type="Int32" Nullable="false" />
+          <Property Name="vchProposito" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bitActivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Cat_TipoArchivo" Relationship="Self.FK_tbl_CodigoFuente_Cat_TipoArchivo" FromRole="tbl_CodigoFuente" ToRole="Cat_TipoArchivo" />
+          <NavigationProperty Name="Cat_TipoCambio" Relationship="Self.FK_tbl_CodigoFuente_Cat_TipoCambio" FromRole="tbl_CodigoFuente" ToRole="Cat_TipoCambio" />
+          <NavigationProperty Name="tbl_ControlCambiosCodigoConfig" Relationship="Self.FK_tbl_CodigoFuente_tbl_ControlCambiosCodigoConfig" FromRole="tbl_CodigoFuente" ToRole="tbl_ControlCambiosCodigoConfig" />
+        </EntityType>
+        <EntityType Name="tbl_ControlCambiosBDConfig">
+          <Key>
+            <PropertyRef Name="intControlBDID" />
+          </Key>
+          <Property Name="intControlBDID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="intDatosGeneralesId" Type="Int32" Nullable="false" />
+          <Property Name="datFechayHoraLiberacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="intCatServidorId" Type="Int32" Nullable="false" />
+          <Property Name="intClasificacionID" Type="Int32" Nullable="false" />
+          <Property Name="datFechaElaboracion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="vchAdicionales" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bitActivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Cat_Clasificacion" Relationship="Self.FK_tbl_ControlCambiosBDConfig_Cat_Clasificacion" FromRole="tbl_ControlCambiosBDConfig" ToRole="Cat_Clasificacion" />
+          <NavigationProperty Name="Cat_Servidores" Relationship="Self.FK_tbl_ControlCambiosBDConfig_Cat_Servidores" FromRole="tbl_ControlCambiosBDConfig" ToRole="Cat_Servidores" />
+          <NavigationProperty Name="tbl_CodigoDB" Relationship="Self.FK_tbl_CodigoDB_tbl_ControlCambiosBDConfig" FromRole="tbl_ControlCambiosBDConfig" ToRole="tbl_CodigoDB" />
+          <NavigationProperty Name="tbl_DatosGenerales" Relationship="Self.FK_tbl_ControlCambiosBDConfig_tbl_DatosGenerales" FromRole="tbl_ControlCambiosBDConfig" ToRole="tbl_DatosGenerales" />
+        </EntityType>
+        <EntityType Name="tbl_ControlCambiosCodigoConfig">
+          <Key>
+            <PropertyRef Name="intControlCodigoID" />
+          </Key>
+          <Property Name="intControlCodigoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="intDatosGeneralesId" Type="Int32" Nullable="false" />
+          <Property Name="datFechayHoraLiberacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="intCatServidorId" Type="Int32" Nullable="false" />
+          <Property Name="intClasificacionID" Type="Int32" Nullable="false" />
+          <Property Name="datFechaElaboracion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="vchAdicionales" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bitActivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Cat_Clasificacion" Relationship="Self.FK_tbl_ControlCambiosCodigoConfig_Cat_Clasificacion" FromRole="tbl_ControlCambiosCodigoConfig" ToRole="Cat_Clasificacion" />
+          <NavigationProperty Name="Cat_Servidores" Relationship="Self.FK_tbl_ControlCambiosCodigoConfig_Cat_Servidores" FromRole="tbl_ControlCambiosCodigoConfig" ToRole="Cat_Servidores" />
+          <NavigationProperty Name="tbl_CodigoFuente" Relationship="Self.FK_tbl_CodigoFuente_tbl_ControlCambiosCodigoConfig" FromRole="tbl_ControlCambiosCodigoConfig" ToRole="tbl_CodigoFuente" />
+          <NavigationProperty Name="tbl_DatosGenerales" Relationship="Self.FK_tbl_ControlCambiosCodigoConfig_tbl_DatosGenerales" FromRole="tbl_ControlCambiosCodigoConfig" ToRole="tbl_DatosGenerales" />
+        </EntityType>
+        <EntityType Name="tbl_DatosGenerales">
+          <Key>
+            <PropertyRef Name="intDatosGeneralesId" />
+          </Key>
+          <Property Name="intDatosGeneralesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vchNombreRequerimiento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vchFolio" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vchModulo" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sdatFechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="intusuarioId" Type="Int32" />
+          <Property Name="bitActivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tbl_AreaUsuaria" Relationship="Self.FK_tbl_AreaUsuaria_tbl_DatosGenerales" FromRole="tbl_DatosGenerales" ToRole="tbl_AreaUsuaria" />
+          <NavigationProperty Name="tbl_ControlCambiosBDConfig" Relationship="Self.FK_tbl_ControlCambiosBDConfig_tbl_DatosGenerales" FromRole="tbl_DatosGenerales" ToRole="tbl_ControlCambiosBDConfig" />
+          <NavigationProperty Name="tbl_ControlCambiosCodigoConfig" Relationship="Self.FK_tbl_ControlCambiosCodigoConfig_tbl_DatosGenerales" FromRole="tbl_DatosGenerales" ToRole="tbl_ControlCambiosCodigoConfig" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK_tbl_DatosGenerales_Usuarios" FromRole="tbl_DatosGenerales" ToRole="Usuarios" />
+          <NavigationProperty Name="tbl_Sistemas" Relationship="Self.FK_tbl_Sistemas_tbl_DatosGenerales" FromRole="tbl_DatosGenerales" ToRole="tbl_Sistemas" />
+        </EntityType>
+        <EntityType Name="tbl_Responsables">
+          <Key>
+            <PropertyRef Name="intResponsableId" />
+          </Key>
+          <Property Name="intResponsableId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="intAreaUsuariaId" Type="Int32" Nullable="false" />
+          <Property Name="intCatResponsableId" Type="Int32" Nullable="false" />
+          <Property Name="bitActibo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Cat_Responsables" Relationship="Self.FK_tbl_Responsables_Cat_Responsables" FromRole="tbl_Responsables" ToRole="Cat_Responsables" />
+          <NavigationProperty Name="tbl_AreaUsuaria" Relationship="Self.FK_tbl_Responsables_tbl_AreaUsuaria" FromRole="tbl_Responsables" ToRole="tbl_AreaUsuaria" />
+        </EntityType>
+        <EntityType Name="tbl_Sistemas">
+          <Key>
+            <PropertyRef Name="intSistemasId" />
+          </Key>
+          <Property Name="intSistemasId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="intDatosGeneralesId" Type="Int32" Nullable="false" />
+          <Property Name="intEquipoSistemasId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cat_EquipoSistemas" Relationship="Self.FK_tbl_Sistemas_Cat_EquipoSistemas" FromRole="tbl_Sistemas" ToRole="Cat_EquipoSistemas" />
+          <NavigationProperty Name="tbl_DatosGenerales" Relationship="Self.FK_tbl_Sistemas_tbl_DatosGenerales" FromRole="tbl_Sistemas" ToRole="tbl_DatosGenerales" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="intusuarioId" />
+          </Key>
+          <Property Name="intusuarioId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vchNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vchApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vchUsuario" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bitActivo" Type="Boolean" Nullable="false" />
+          <Property Name="sdatFechaIngreso" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tbl_DatosGenerales" Relationship="Self.FK_tbl_DatosGenerales_Usuarios" FromRole="Usuarios" ToRole="tbl_DatosGenerales" />
+        </EntityType>
+        <Association Name="FK_tbl_AreaUsuaria_Cat_Areausuaria">
+          <End Role="Cat_Areausuaria" Type="Self.Cat_Areausuaria" Multiplicity="1" />
+          <End Role="tbl_AreaUsuaria" Type="Self.tbl_AreaUsuaria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_Areausuaria">
+              <PropertyRef Name="intCatAreaUsuaria" />
+            </Principal>
+            <Dependent Role="tbl_AreaUsuaria">
+              <PropertyRef Name="intCatAreaUsuaria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cat_EquipoSistemas_Cat_CargosSistemas">
+          <End Role="Cat_CargosSistemas" Type="Self.Cat_CargosSistemas" Multiplicity="1" />
+          <End Role="Cat_EquipoSistemas" Type="Self.Cat_EquipoSistemas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_CargosSistemas">
+              <PropertyRef Name="intCargoId" />
+            </Principal>
+            <Dependent Role="Cat_EquipoSistemas">
+              <PropertyRef Name="intCargoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_ControlCambiosBDConfig_Cat_Clasificacion">
+          <End Role="Cat_Clasificacion" Type="Self.Cat_Clasificacion" Multiplicity="1" />
+          <End Role="tbl_ControlCambiosBDConfig" Type="Self.tbl_ControlCambiosBDConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_Clasificacion">
+              <PropertyRef Name="intClasificacionID" />
+            </Principal>
+            <Dependent Role="tbl_ControlCambiosBDConfig">
+              <PropertyRef Name="intClasificacionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_ControlCambiosCodigoConfig_Cat_Clasificacion">
+          <End Role="Cat_Clasificacion" Type="Self.Cat_Clasificacion" Multiplicity="1" />
+          <End Role="tbl_ControlCambiosCodigoConfig" Type="Self.tbl_ControlCambiosCodigoConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_Clasificacion">
+              <PropertyRef Name="intClasificacionID" />
+            </Principal>
+            <Dependent Role="tbl_ControlCambiosCodigoConfig">
+              <PropertyRef Name="intClasificacionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Sistemas_Cat_EquipoSistemas">
+          <End Role="Cat_EquipoSistemas" Type="Self.Cat_EquipoSistemas" Multiplicity="1" />
+          <End Role="tbl_Sistemas" Type="Self.tbl_Sistemas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_EquipoSistemas">
+              <PropertyRef Name="intEquipoSistemasId" />
+            </Principal>
+            <Dependent Role="tbl_Sistemas">
+              <PropertyRef Name="intEquipoSistemasId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Responsables_Cat_Responsables">
+          <End Role="Cat_Responsables" Type="Self.Cat_Responsables" Multiplicity="1" />
+          <End Role="tbl_Responsables" Type="Self.tbl_Responsables" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_Responsables">
+              <PropertyRef Name="intCatResponsableId" />
+            </Principal>
+            <Dependent Role="tbl_Responsables">
+              <PropertyRef Name="intCatResponsableId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_ControlCambiosBDConfig_Cat_Servidores">
+          <End Role="Cat_Servidores" Type="Self.Cat_Servidores" Multiplicity="1" />
+          <End Role="tbl_ControlCambiosBDConfig" Type="Self.tbl_ControlCambiosBDConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_Servidores">
+              <PropertyRef Name="intCatServidorId" />
+            </Principal>
+            <Dependent Role="tbl_ControlCambiosBDConfig">
+              <PropertyRef Name="intCatServidorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_ControlCambiosCodigoConfig_Cat_Servidores">
+          <End Role="Cat_Servidores" Type="Self.Cat_Servidores" Multiplicity="1" />
+          <End Role="tbl_ControlCambiosCodigoConfig" Type="Self.tbl_ControlCambiosCodigoConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_Servidores">
+              <PropertyRef Name="intCatServidorId" />
+            </Principal>
+            <Dependent Role="tbl_ControlCambiosCodigoConfig">
+              <PropertyRef Name="intCatServidorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_CodigoFuente_Cat_TipoArchivo">
+          <End Role="Cat_TipoArchivo" Type="Self.Cat_TipoArchivo" Multiplicity="1" />
+          <End Role="tbl_CodigoFuente" Type="Self.tbl_CodigoFuente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_TipoArchivo">
+              <PropertyRef Name="intTipoArchivo" />
+            </Principal>
+            <Dependent Role="tbl_CodigoFuente">
+              <PropertyRef Name="intTipoArchivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_CodigoDB_Cat_TipoCambio">
+          <End Role="Cat_TipoCambio" Type="Self.Cat_TipoCambio" Multiplicity="1" />
+          <End Role="tbl_CodigoDB" Type="Self.tbl_CodigoDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_TipoCambio">
+              <PropertyRef Name="intTipoCambioId" />
+            </Principal>
+            <Dependent Role="tbl_CodigoDB">
+              <PropertyRef Name="intTipoCambioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_CodigoFuente_Cat_TipoCambio">
+          <End Role="Cat_TipoCambio" Type="Self.Cat_TipoCambio" Multiplicity="1" />
+          <End Role="tbl_CodigoFuente" Type="Self.tbl_CodigoFuente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_TipoCambio">
+              <PropertyRef Name="intTipoCambioId" />
+            </Principal>
+            <Dependent Role="tbl_CodigoFuente">
+              <PropertyRef Name="intTipoCambioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_CodigoDB_Cat_TipoObjeto">
+          <End Role="Cat_TipoObjeto" Type="Self.Cat_TipoObjeto" Multiplicity="1" />
+          <End Role="tbl_CodigoDB" Type="Self.tbl_CodigoDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cat_TipoObjeto">
+              <PropertyRef Name="intTipoObjeto" />
+            </Principal>
+            <Dependent Role="tbl_CodigoDB">
+              <PropertyRef Name="intTipoObjeto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_AreaUsuaria_tbl_DatosGenerales">
+          <End Role="tbl_DatosGenerales" Type="Self.tbl_DatosGenerales" Multiplicity="1" />
+          <End Role="tbl_AreaUsuaria" Type="Self.tbl_AreaUsuaria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_DatosGenerales">
+              <PropertyRef Name="intDatosGeneralesId" />
+            </Principal>
+            <Dependent Role="tbl_AreaUsuaria">
+              <PropertyRef Name="intDatosGeneralesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Responsables_tbl_AreaUsuaria">
+          <End Role="tbl_AreaUsuaria" Type="Self.tbl_AreaUsuaria" Multiplicity="1" />
+          <End Role="tbl_Responsables" Type="Self.tbl_Responsables" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_AreaUsuaria">
+              <PropertyRef Name="intAreaUsuariaId" />
+            </Principal>
+            <Dependent Role="tbl_Responsables">
+              <PropertyRef Name="intAreaUsuariaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_CodigoDB_tbl_ControlCambiosBDConfig">
+          <End Role="tbl_ControlCambiosBDConfig" Type="Self.tbl_ControlCambiosBDConfig" Multiplicity="1" />
+          <End Role="tbl_CodigoDB" Type="Self.tbl_CodigoDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ControlCambiosBDConfig">
+              <PropertyRef Name="intControlBDID" />
+            </Principal>
+            <Dependent Role="tbl_CodigoDB">
+              <PropertyRef Name="intControlBDID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_CodigoFuente_tbl_ControlCambiosCodigoConfig">
+          <End Role="tbl_ControlCambiosCodigoConfig" Type="Self.tbl_ControlCambiosCodigoConfig" Multiplicity="1" />
+          <End Role="tbl_CodigoFuente" Type="Self.tbl_CodigoFuente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_ControlCambiosCodigoConfig">
+              <PropertyRef Name="intControlCodigoID" />
+            </Principal>
+            <Dependent Role="tbl_CodigoFuente">
+              <PropertyRef Name="intControlCodigoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_ControlCambiosBDConfig_tbl_DatosGenerales">
+          <End Role="tbl_DatosGenerales" Type="Self.tbl_DatosGenerales" Multiplicity="1" />
+          <End Role="tbl_ControlCambiosBDConfig" Type="Self.tbl_ControlCambiosBDConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_DatosGenerales">
+              <PropertyRef Name="intDatosGeneralesId" />
+            </Principal>
+            <Dependent Role="tbl_ControlCambiosBDConfig">
+              <PropertyRef Name="intDatosGeneralesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_ControlCambiosCodigoConfig_tbl_DatosGenerales">
+          <End Role="tbl_DatosGenerales" Type="Self.tbl_DatosGenerales" Multiplicity="1" />
+          <End Role="tbl_ControlCambiosCodigoConfig" Type="Self.tbl_ControlCambiosCodigoConfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_DatosGenerales">
+              <PropertyRef Name="intDatosGeneralesId" />
+            </Principal>
+            <Dependent Role="tbl_ControlCambiosCodigoConfig">
+              <PropertyRef Name="intDatosGeneralesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_DatosGenerales_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="tbl_DatosGenerales" Type="Self.tbl_DatosGenerales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="intusuarioId" />
+            </Principal>
+            <Dependent Role="tbl_DatosGenerales">
+              <PropertyRef Name="intusuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_Sistemas_tbl_DatosGenerales">
+          <End Role="tbl_DatosGenerales" Type="Self.tbl_DatosGenerales" Multiplicity="1" />
+          <End Role="tbl_Sistemas" Type="Self.tbl_Sistemas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_DatosGenerales">
+              <PropertyRef Name="intDatosGeneralesId" />
+            </Principal>
+            <Dependent Role="tbl_Sistemas">
+              <PropertyRef Name="intDatosGeneralesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbDocumentacionEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cat_Areausuaria" EntityType="Self.Cat_Areausuaria" />
+          <EntitySet Name="Cat_CargosSistemas" EntityType="Self.Cat_CargosSistemas" />
+          <EntitySet Name="Cat_Clasificacion" EntityType="Self.Cat_Clasificacion" />
+          <EntitySet Name="Cat_EquipoSistemas" EntityType="Self.Cat_EquipoSistemas" />
+          <EntitySet Name="Cat_Responsables" EntityType="Self.Cat_Responsables" />
+          <EntitySet Name="Cat_Servidores" EntityType="Self.Cat_Servidores" />
+          <EntitySet Name="Cat_TipoArchivo" EntityType="Self.Cat_TipoArchivo" />
+          <EntitySet Name="Cat_TipoCambio" EntityType="Self.Cat_TipoCambio" />
+          <EntitySet Name="Cat_TipoObjeto" EntityType="Self.Cat_TipoObjeto" />
+          <EntitySet Name="tbl_AreaUsuaria" EntityType="Self.tbl_AreaUsuaria" />
+          <EntitySet Name="tbl_CodigoDB" EntityType="Self.tbl_CodigoDB" />
+          <EntitySet Name="tbl_CodigoFuente" EntityType="Self.tbl_CodigoFuente" />
+          <EntitySet Name="tbl_ControlCambiosBDConfig" EntityType="Self.tbl_ControlCambiosBDConfig" />
+          <EntitySet Name="tbl_ControlCambiosCodigoConfig" EntityType="Self.tbl_ControlCambiosCodigoConfig" />
+          <EntitySet Name="tbl_DatosGenerales" EntityType="Self.tbl_DatosGenerales" />
+          <EntitySet Name="tbl_Responsables" EntityType="Self.tbl_Responsables" />
+          <EntitySet Name="tbl_Sistemas" EntityType="Self.tbl_Sistemas" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+          <AssociationSet Name="FK_tbl_AreaUsuaria_Cat_Areausuaria" Association="Self.FK_tbl_AreaUsuaria_Cat_Areausuaria">
+            <End Role="Cat_Areausuaria" EntitySet="Cat_Areausuaria" />
+            <End Role="tbl_AreaUsuaria" EntitySet="tbl_AreaUsuaria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cat_EquipoSistemas_Cat_CargosSistemas" Association="Self.FK_Cat_EquipoSistemas_Cat_CargosSistemas">
+            <End Role="Cat_CargosSistemas" EntitySet="Cat_CargosSistemas" />
+            <End Role="Cat_EquipoSistemas" EntitySet="Cat_EquipoSistemas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_ControlCambiosBDConfig_Cat_Clasificacion" Association="Self.FK_tbl_ControlCambiosBDConfig_Cat_Clasificacion">
+            <End Role="Cat_Clasificacion" EntitySet="Cat_Clasificacion" />
+            <End Role="tbl_ControlCambiosBDConfig" EntitySet="tbl_ControlCambiosBDConfig" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_ControlCambiosCodigoConfig_Cat_Clasificacion" Association="Self.FK_tbl_ControlCambiosCodigoConfig_Cat_Clasificacion">
+            <End Role="Cat_Clasificacion" EntitySet="Cat_Clasificacion" />
+            <End Role="tbl_ControlCambiosCodigoConfig" EntitySet="tbl_ControlCambiosCodigoConfig" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Sistemas_Cat_EquipoSistemas" Association="Self.FK_tbl_Sistemas_Cat_EquipoSistemas">
+            <End Role="Cat_EquipoSistemas" EntitySet="Cat_EquipoSistemas" />
+            <End Role="tbl_Sistemas" EntitySet="tbl_Sistemas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Responsables_Cat_Responsables" Association="Self.FK_tbl_Responsables_Cat_Responsables">
+            <End Role="Cat_Responsables" EntitySet="Cat_Responsables" />
+            <End Role="tbl_Responsables" EntitySet="tbl_Responsables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_ControlCambiosBDConfig_Cat_Servidores" Association="Self.FK_tbl_ControlCambiosBDConfig_Cat_Servidores">
+            <End Role="Cat_Servidores" EntitySet="Cat_Servidores" />
+            <End Role="tbl_ControlCambiosBDConfig" EntitySet="tbl_ControlCambiosBDConfig" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_ControlCambiosCodigoConfig_Cat_Servidores" Association="Self.FK_tbl_ControlCambiosCodigoConfig_Cat_Servidores">
+            <End Role="Cat_Servidores" EntitySet="Cat_Servidores" />
+            <End Role="tbl_ControlCambiosCodigoConfig" EntitySet="tbl_ControlCambiosCodigoConfig" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_CodigoFuente_Cat_TipoArchivo" Association="Self.FK_tbl_CodigoFuente_Cat_TipoArchivo">
+            <End Role="Cat_TipoArchivo" EntitySet="Cat_TipoArchivo" />
+            <End Role="tbl_CodigoFuente" EntitySet="tbl_CodigoFuente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_CodigoDB_Cat_TipoCambio" Association="Self.FK_tbl_CodigoDB_Cat_TipoCambio">
+            <End Role="Cat_TipoCambio" EntitySet="Cat_TipoCambio" />
+            <End Role="tbl_CodigoDB" EntitySet="tbl_CodigoDB" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_CodigoFuente_Cat_TipoCambio" Association="Self.FK_tbl_CodigoFuente_Cat_TipoCambio">
+            <End Role="Cat_TipoCambio" EntitySet="Cat_TipoCambio" />
+            <End Role="tbl_CodigoFuente" EntitySet="tbl_CodigoFuente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_CodigoDB_Cat_TipoObjeto" Association="Self.FK_tbl_CodigoDB_Cat_TipoObjeto">
+            <End Role="Cat_TipoObjeto" EntitySet="Cat_TipoObjeto" />
+            <End Role="tbl_CodigoDB" EntitySet="tbl_CodigoDB" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_AreaUsuaria_tbl_DatosGenerales" Association="Self.FK_tbl_AreaUsuaria_tbl_DatosGenerales">
+            <End Role="tbl_DatosGenerales" EntitySet="tbl_DatosGenerales" />
+            <End Role="tbl_AreaUsuaria" EntitySet="tbl_AreaUsuaria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Responsables_tbl_AreaUsuaria" Association="Self.FK_tbl_Responsables_tbl_AreaUsuaria">
+            <End Role="tbl_AreaUsuaria" EntitySet="tbl_AreaUsuaria" />
+            <End Role="tbl_Responsables" EntitySet="tbl_Responsables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_CodigoDB_tbl_ControlCambiosBDConfig" Association="Self.FK_tbl_CodigoDB_tbl_ControlCambiosBDConfig">
+            <End Role="tbl_ControlCambiosBDConfig" EntitySet="tbl_ControlCambiosBDConfig" />
+            <End Role="tbl_CodigoDB" EntitySet="tbl_CodigoDB" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_CodigoFuente_tbl_ControlCambiosCodigoConfig" Association="Self.FK_tbl_CodigoFuente_tbl_ControlCambiosCodigoConfig">
+            <End Role="tbl_ControlCambiosCodigoConfig" EntitySet="tbl_ControlCambiosCodigoConfig" />
+            <End Role="tbl_CodigoFuente" EntitySet="tbl_CodigoFuente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_ControlCambiosBDConfig_tbl_DatosGenerales" Association="Self.FK_tbl_ControlCambiosBDConfig_tbl_DatosGenerales">
+            <End Role="tbl_DatosGenerales" EntitySet="tbl_DatosGenerales" />
+            <End Role="tbl_ControlCambiosBDConfig" EntitySet="tbl_ControlCambiosBDConfig" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_ControlCambiosCodigoConfig_tbl_DatosGenerales" Association="Self.FK_tbl_ControlCambiosCodigoConfig_tbl_DatosGenerales">
+            <End Role="tbl_DatosGenerales" EntitySet="tbl_DatosGenerales" />
+            <End Role="tbl_ControlCambiosCodigoConfig" EntitySet="tbl_ControlCambiosCodigoConfig" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_DatosGenerales_Usuarios" Association="Self.FK_tbl_DatosGenerales_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="tbl_DatosGenerales" EntitySet="tbl_DatosGenerales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_Sistemas_tbl_DatosGenerales" Association="Self.FK_tbl_Sistemas_tbl_DatosGenerales">
+            <End Role="tbl_DatosGenerales" EntitySet="tbl_DatosGenerales" />
+            <End Role="tbl_Sistemas" EntitySet="tbl_Sistemas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbDocumentacionModelStoreContainer" CdmEntityContainer="dbDocumentacionEntities">
+          <EntitySetMapping Name="Cat_Areausuaria">
+            <EntityTypeMapping TypeName="dbDocumentacionModel.Cat_Areausuaria">
+              <MappingFragment StoreEntitySet="Cat_Areausuaria">
+                <ScalarProperty Name="intCatAreaUsuaria" ColumnName="intCatAreaUsuaria" />
+                <ScalarProperty Name="vchAreausuaria" ColumnName="vchAreausuaria" />
+                <ScalarProperty Name="bitActivo" ColumnName="bitActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cat_CargosSistemas">
+            <EntityTypeMapping TypeName="dbDocumentacionModel.Cat_CargosSistemas">
+              <MappingFragment StoreEntitySet="Cat_CargosSistemas">
+                <ScalarProperty Name="intCargoId" ColumnName="intCargoId" />
+                <ScalarProperty Name="vchDescripcion" ColumnName="vchDescripcion" />
+                <ScalarProperty Name="bitActivo" ColumnName="bitActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cat_Clasificacion">
+            <EntityTypeMapping TypeName="dbDocumentacionModel.Cat_Clasificacion">
+              <MappingFragment StoreEntitySet="Cat_Clasificacion">
+                <ScalarProperty Name="intClasificacionID" ColumnName="intClasificacionID" />
+                <ScalarProperty Name="vchClasificacion" ColumnName="vchClasificacion" />
+                <ScalarProperty Name="bitActivo" ColumnName="bitActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cat_EquipoSistemas">
+            <EntityTypeMapping TypeName="dbDocumentacionModel.Cat_EquipoSistemas">
+              <MappingFragment StoreEntitySet="Cat_EquipoSistemas">
+                <ScalarProperty Name="intEquipoSistemasId" ColumnName="intEquipoSistemasId" />
+                <ScalarProperty Name="intCargoId" ColumnName="intCargoId" />
+                <ScalarProperty Name="vchNombre" ColumnName="vchNombre" />
+                <ScalarProperty Name="vchApellidoPaterno" ColumnName="vchApellidoPaterno" />
+                <ScalarProperty Name="vchApellidoMaterno" ColumnName="vchApellidoMaterno" />
+                <ScalarProperty Name="vchRFC" ColumnName="vchRFC" />
+                <ScalarProperty Name="bitActivo" ColumnName="bitActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cat_Responsables">
+            <EntityTypeMapping TypeName="dbDocumentacionModel.Cat_Responsables">
+              <MappingFragment StoreEntitySet="Cat_Responsables">
+                <ScalarProperty Name="intCatResponsableId" ColumnName="intCatResponsableId" />
+                <ScalarProperty Name="vchNombre" ColumnName="vchNombre" />
+                <ScalarProperty Name="vchApellidoPaterno" ColumnName="vchApellidoPaterno" />
+                <ScalarProperty Name="vchApellidoMaterno" ColumnName="vchApellidoMaterno" />
+                <ScalarProperty Name="vchRFC" ColumnName="vchRFC" />
+                <ScalarProperty Name="bitResponsablePrincipal" ColumnName="bitResponsablePrincipal" />
+                <ScalarProperty Name="bitActivo" ColumnName="bitActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cat_Servidores">
+            <EntityTypeMapping TypeName="dbDocumentacionModel.Cat_Servidores">
+              <MappingFragment StoreEntitySet="Cat_Servidores">
+                <ScalarProperty Name="intCatServidorId" ColumnName="intCatServidorId" />
+                <ScalarProperty Name="vchServidor" ColumnName="vchServidor" />
+                <ScalarProperty Name="bitActivo" ColumnName="bitActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cat_TipoArchivo">
+            <EntityTypeMapping TypeName="dbDocumentacionModel.Cat_TipoArchivo">
+              <MappingFragment StoreEntitySet="Cat_TipoArchivo">
+                <ScalarProperty Name="intTipoArchivo" ColumnName="intTipoArchivo" />
+                <ScalarProperty Name="vchTipoArchivo" ColumnName="vchTipoArchivo" />
+                <ScalarProperty Name="vchExtension" ColumnName="vchExtension" />
+                <ScalarProperty Name="bitActivo" ColumnName="bitActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cat_TipoCambio">
+            <EntityTypeMapping TypeName="dbDocumentacionModel.Cat_TipoCambio">
+              <MappingFragment StoreEntitySet="Cat_TipoCambio">
+                <ScalarProperty Name="intTipoCambioId" ColumnName="intTipoCambioId" />
+                <ScalarProperty Name="vchTipoCambio" ColumnName="vchTipoCambio" />
+                <ScalarProperty Name="bitActivo" ColumnName="bitActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cat_TipoObjeto">
+            <EntityTypeMapping TypeName="dbDocumentacionModel.Cat_TipoObjeto">
+              <MappingFragment StoreEntitySet="Cat_TipoObjeto">
+                <ScalarProperty Name="intTipoObjeto" ColumnName="intTipoObjeto" />
+                <ScalarProperty Name="vchTipoObjeto" ColumnName="vchTipoObjeto" />
+                <ScalarProperty Name="bitActivo" ColumnName="bitActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_AreaUsuaria">
+            <EntityTypeMapping TypeName="dbDocumentacionModel.tbl_AreaUsuaria">
+              <MappingFragment StoreEntitySet="tbl_AreaUsuaria">
+                <ScalarProperty Name="intAreaUsuariaId" ColumnName="intAreaUsuariaId" />
+                <ScalarProperty Name="intDatosGeneralesId" ColumnName="intDatosGeneralesId" />
+                <ScalarProperty Name="intCatAreaUsuaria" ColumnName="intCatAreaUsuaria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_CodigoDB">
+            <EntityTypeMapping TypeName="dbDocumentacionModel.tbl_CodigoDB">
+              <MappingFragment StoreEntitySet="tbl_CodigoDB">
+                <ScalarProperty Name="intCodigoDBID" ColumnName="intCodigoDBID" />
+                <ScalarProperty Name="intControlBDID" ColumnName="intControlBDID" />
+                <ScalarProperty Name="intTipoCambioId" ColumnName="intTipoCambioId" />
+                <ScalarProperty Name="intTipoObjeto" ColumnName="intTipoObjeto" />
+                <ScalarProperty Name="vchBase" ColumnName="vchBase" />
+                <ScalarProperty Name="intOrden" ColumnName="intOrden" />
+                <ScalarProperty Name="vchNombreObjeto" ColumnName="vchNombreObjeto" />
+                <ScalarProperty Name="vchDescripcion" ColumnName="vchDescripcion" />
+                <ScalarProperty Name="vchRuta" ColumnName="vchRuta" />
+                <ScalarProperty Name="bitActivo" ColumnName="bitActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_CodigoFuente">
+            <EntityTypeMapping TypeName="dbDocumentacionModel.tbl_CodigoFuente">
+              <MappingFragment StoreEntitySet="tbl_CodigoFuente">
+                <ScalarProperty Name="intCodigoFuenteID" ColumnName="intCodigoFuenteID" />
+                <ScalarProperty Name="intControlCodigoID" ColumnName="intControlCodigoID" />
+                <ScalarProperty Name="intTipoCambioId" ColumnName="intTipoCambioId" />
+                <ScalarProperty Name="vchRuta" ColumnName="vchRuta" />
+                <ScalarProperty Name="vchArchivo" ColumnName="vchArchivo" />
+                <ScalarProperty Name="intTipoArchivo" ColumnName="intTipoArchivo" />
+                <ScalarProperty Name="vchProposito" ColumnName="vchProposito" />
+                <ScalarProperty Name="bitActivo" ColumnName="bitActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ControlCambiosBDConfig">
+            <EntityTypeMapping TypeName="dbDocumentacionModel.tbl_ControlCambiosBDConfig">
+              <MappingFragment StoreEntitySet="tbl_ControlCambiosBDConfig">
+                <ScalarProperty Name="intControlBDID" ColumnName="intControlBDID" />
+                <ScalarProperty Name="intDatosGeneralesId" ColumnName="intDatosGeneralesId" />
+                <ScalarProperty Name="datFechayHoraLiberacion" ColumnName="datFechayHoraLiberacion" />
+                <ScalarProperty Name="intCatServidorId" ColumnName="intCatServidorId" />
+                <ScalarProperty Name="intClasificacionID" ColumnName="intClasificacionID" />
+                <ScalarProperty Name="datFechaElaboracion" ColumnName="datFechaElaboracion" />
+                <ScalarProperty Name="vchAdicionales" ColumnName="vchAdicionales" />
+                <ScalarProperty Name="bitActivo" ColumnName="bitActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ControlCambiosCodigoConfig">
+            <EntityTypeMapping TypeName="dbDocumentacionModel.tbl_ControlCambiosCodigoConfig">
+              <MappingFragment StoreEntitySet="tbl_ControlCambiosCodigoConfig">
+                <ScalarProperty Name="intControlCodigoID" ColumnName="intControlCodigoID" />
+                <ScalarProperty Name="intDatosGeneralesId" ColumnName="intDatosGeneralesId" />
+                <ScalarProperty Name="datFechayHoraLiberacion" ColumnName="datFechayHoraLiberacion" />
+                <ScalarProperty Name="intCatServidorId" ColumnName="intCatServidorId" />
+                <ScalarProperty Name="intClasificacionID" ColumnName="intClasificacionID" />
+                <ScalarProperty Name="datFechaElaboracion" ColumnName="datFechaElaboracion" />
+                <ScalarProperty Name="vchAdicionales" ColumnName="vchAdicionales" />
+                <ScalarProperty Name="bitActivo" ColumnName="bitActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_DatosGenerales">
+            <EntityTypeMapping TypeName="dbDocumentacionModel.tbl_DatosGenerales">
+              <MappingFragment StoreEntitySet="tbl_DatosGenerales">
+                <ScalarProperty Name="intDatosGeneralesId" ColumnName="intDatosGeneralesId" />
+                <ScalarProperty Name="vchNombreRequerimiento" ColumnName="vchNombreRequerimiento" />
+                <ScalarProperty Name="vchFolio" ColumnName="vchFolio" />
+                <ScalarProperty Name="vchModulo" ColumnName="vchModulo" />
+                <ScalarProperty Name="sdatFechaCreacion" ColumnName="sdatFechaCreacion" />
+                <ScalarProperty Name="intusuarioId" ColumnName="intusuarioId" />
+                <ScalarProperty Name="bitActivo" ColumnName="bitActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Responsables">
+            <EntityTypeMapping TypeName="dbDocumentacionModel.tbl_Responsables">
+              <MappingFragment StoreEntitySet="tbl_Responsables">
+                <ScalarProperty Name="intResponsableId" ColumnName="intResponsableId" />
+                <ScalarProperty Name="intAreaUsuariaId" ColumnName="intAreaUsuariaId" />
+                <ScalarProperty Name="intCatResponsableId" ColumnName="intCatResponsableId" />
+                <ScalarProperty Name="bitActibo" ColumnName="bitActibo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Sistemas">
+            <EntityTypeMapping TypeName="dbDocumentacionModel.tbl_Sistemas">
+              <MappingFragment StoreEntitySet="tbl_Sistemas">
+                <ScalarProperty Name="intSistemasId" ColumnName="intSistemasId" />
+                <ScalarProperty Name="intDatosGeneralesId" ColumnName="intDatosGeneralesId" />
+                <ScalarProperty Name="intEquipoSistemasId" ColumnName="intEquipoSistemasId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="dbDocumentacionModel.Usuarios">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="intusuarioId" ColumnName="intusuarioId" />
+                <ScalarProperty Name="vchNombre" ColumnName="vchNombre" />
+                <ScalarProperty Name="vchApellido" ColumnName="vchApellido" />
+                <ScalarProperty Name="vchUsuario" ColumnName="vchUsuario" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="bitActivo" ColumnName="bitActivo" />
+                <ScalarProperty Name="sdatFechaIngreso" ColumnName="sdatFechaIngreso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

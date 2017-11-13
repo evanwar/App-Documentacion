@@ -1,0 +1,86 @@
+﻿<Window x:Class="App_Documentacion.Vistas.Home"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:App_Documentacion.Vistas"
+        xmlns:Alertas="clr-namespace:App_Documentacion.Vistas.Alertas"
+        WindowStartupLocation="CenterScreen"
+        DataContext="{StaticResource ContextInicio}"
+        WindowState="{Binding Path=EstadoVentana,Mode=TwoWay}"
+        Style="{StaticResource StyleWindowHome}" x:Name="wInicio" SizeToContent="Manual">
+    <Window.Background>
+        <ImageBrush ImageSource="/App-Documentacion;component/Imagenes/wallpaper.jpg"/>
+    </Window.Background>
+
+    <Grid >
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid  Background="{StaticResource BordeOpaco}" Grid.ColumnSpan="2">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <ComboBox Style="{StaticResource ComboWorkItem}" Grid.Column="1"  Height="35" ItemsSource="{Binding Tareas,Mode=TwoWay}" Width="150"/>
+
+
+
+
+                <Button Tag="{StaticResource Add}" Grid.Column="2" Style="{StaticResource ButtonImage}" Command="{Binding Comandonavegar}" CommandParameter="Inicio"/>
+
+
+
+            </Grid>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="2">
+                <Button Style="{StaticResource ButtonEstadoVentanaMinimizar}" Command="{Binding ComandoEstadoVentana}" CommandParameter="Minimizar" />
+                <Button Style="{StaticResource ButtonEstadoVentanaMaximizar}" Command="{Binding ComandoEstadoVentana}" CommandParameter="Maximizar" />
+                <Button  Style="{StaticResource ButtonEstadoVentanaCerrar}" Command="{Binding ComandoCerrarVentana}" CommandParameter="{Binding ElementName=wInicio}"/>
+            </StackPanel>
+
+        </Grid>
+
+        <Grid Grid.Row="1"  HorizontalAlignment="Left" Background="{StaticResource BordeOpaco}">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+
+            <Button Style="{StaticResource ButtonImage}" Tag="{StaticResource Settings}"  VerticalAlignment="Bottom" Command="{Binding Comandonavegar}" CommandParameter="Config"/>
+            <Button Grid.Row="1" Style="{StaticResource ButtonImage}" Tag="{StaticResource Code}" Command="{Binding Comandonavegar}" CommandParameter="Code" VerticalAlignment="Top"/>
+
+
+
+
+
+
+
+
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="1" Margin="2">
+            <Frame Source="{Binding DisplayPage,Mode=TwoWay}"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" NavigationUIVisibility="Hidden"/>
+        </Grid>
+
+        <Alertas:Confirmacion Grid.ColumnSpan="2" Grid.RowSpan="2" />
+    </Grid>
+</Window>

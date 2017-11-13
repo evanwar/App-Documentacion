@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="App_Documentacion.Vistas.Alertas.Confirmacion"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:App_Documentacion.Vistas.Alertas" Visibility="{Binding MostarConfirmacion}">
+    <Grid Background="{StaticResource BordeOpaco}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Style="{StaticResource TextBlockGreen}" >
+            <Run Text="¿"/>
+            <Run Text="{Binding MensajeAlert}"/>
+            <Run Text="?"/>
+        </TextBlock>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1">
+            <Button  VerticalAlignment="Center" HorizontalAlignment="Center"  Style="{StaticResource ButtonAceptar}"/>
+            <Button  VerticalAlignment="Center" HorizontalAlignment="Center"  Style="{StaticResource ButtonCancelar}"/>
+        </StackPanel>
+        
+    
+    </Grid>
+</UserControl>
