@@ -63,6 +63,7 @@
       <HintPath>..\packages\Unofficial.Blend.Interactivity.1.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,6 +75,7 @@
   <ItemGroup>
     <Compile Include="Convertidores\Convertidores.cs" />
     <Compile Include="Localizador\Locator.cs" />
+    <Compile Include="Modelos\Alertas\ModeloAlertas.cs" />
     <Compile Include="Modelos\Inicio\ModeloInicio.cs" />
     <Compile Include="Modelos\ModeloBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

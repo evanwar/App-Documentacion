@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using MVVM.Modelos.Alertas;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -32,9 +33,9 @@ namespace MVVM.Modelos
 
         private Uri displayPage;
 
-        private String mensajeAlert;
 
-        private Visibility mostarConfirmacion;
+
+
 
 
         #endregion
@@ -65,17 +66,6 @@ namespace MVVM.Modelos
             }
         }
 
-        public String MensajeAlert
-        {
-            get { return mensajeAlert; }
-            set { mensajeAlert = value; OnPropertyChanged(); }
-        }
-
-        public Visibility MostarConfirmacion
-        {
-            get { return mostarConfirmacion; }
-            set { mostarConfirmacion = value; OnPropertyChanged(); }
-        }
 
         public RelayCommand<String> ComandoEstadoVentana
         {
@@ -104,6 +94,24 @@ namespace MVVM.Modelos
 
         #endregion
 
+        #region Modelos
+
+        private ModeloAlertas modeloALerta;
+
+        public ModeloAlertas ModelALerta
+        {
+            get
+            {
+                if (modeloALerta == null)
+                {
+                    modeloALerta = new ModeloAlertas();
+                }
+                return modeloALerta;
+            }
+        }
+
+        #endregion
+
         #region Constructor
 
         public ModeloBase()
@@ -117,7 +125,8 @@ namespace MVVM.Modelos
 
         public virtual void Inicializar()
         {
-            mostarConfirmacion = Visibility.Collapsed;
+
+
             tareas = new ObservableCollection<WorItem>();
 
             Tareas.Add(new WorItem
@@ -128,12 +137,6 @@ namespace MVVM.Modelos
 
         }
 
-
-        public virtual void ShowAlert(Boolean visible = false, String mensaje = "")
-        {
-            MensajeAlert = mensaje;
-            MostarConfirmacion = visible ? Visibility.Visible : Visibility.Collapsed;
-        }
 
         #endregion
 
@@ -178,7 +181,7 @@ namespace MVVM.Modelos
             switch (pagina)
             {
                 case "Inicio":
-                    ShowAlert(true, "Desea Continuar");
+                    ModelALerta.ShowAlert(true, "Hola");
                     //DisplayPage = new Uri("Inicio/AreaDeTrabajo.xaml", UriKind.RelativeOrAbsolute);
                     break;
                 case "Code":

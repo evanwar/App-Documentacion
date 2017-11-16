@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVVM.Modelos.Alertas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -22,6 +23,8 @@ namespace MVVM.Modelos.Inicio
 
 
         #endregion
+
+       
 
         #region Contructor
 

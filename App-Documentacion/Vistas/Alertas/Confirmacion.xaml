@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:App_Documentacion.Vistas.Alertas" Visibility="{Binding MostarConfirmacion}">
+             xmlns:local="clr-namespace:App_Documentacion.Vistas.Alertas" Visibility="{Binding MostarAlerta}">
     <Grid Background="{StaticResource BordeOpaco}">
 
         <Grid.RowDefinitions>
@@ -19,7 +19,7 @@
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1">
             <Button  VerticalAlignment="Center" HorizontalAlignment="Center"  Style="{StaticResource ButtonAceptar}"/>
-            <Button  VerticalAlignment="Center" HorizontalAlignment="Center"  Style="{StaticResource ButtonCancelar}"/>
+            <Button  VerticalAlignment="Center" HorizontalAlignment="Center"  Style="{StaticResource ButtonCancelar}" Command="{Binding ComandoCancelar}"/>
         </StackPanel>
         
     

@@ -7,13 +7,22 @@
       Margin="5"
       Title="Configuracion">
     <Grid>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        
+     
+       
  
-        <Grid>
+        <Grid Margin="5" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -24,14 +33,14 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <Grid Background="Green" Height="30" Grid.ColumnSpan="2"  >
-                <TextBlock Text="Generales" Foreground="White" FontWeight="Bold" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5"/>
+            <Grid Background="{StaticResource VerdeBim}" Height="30" Grid.ColumnSpan="2"  >
+                <TextBlock Text="Generales" Foreground="{StaticResource ColorBlanco}" FontWeight="Bold" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5"/>
             </Grid>
 
             <Border BorderThickness="1" BorderBrush="Gray" Grid.Row="1" Grid.ColumnSpan="2">
                 <Grid  Background="{StaticResource BordeOpaco}">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="200"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
@@ -59,7 +68,191 @@
 
             </Border>
         </Grid>
-      
+
+        <Grid Grid.Row="1" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Background="{StaticResource VerdeBim}" Height="30" Grid.ColumnSpan="2"  >
+                <TextBlock Text="{StaticResource AreaUsuaria}" Foreground="{StaticResource ColorBlanco}" FontWeight="Bold" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5"/>
+            </Grid>
+
+            <Border BorderThickness="1" BorderBrush="Gray" Grid.Row="1" Grid.ColumnSpan="2">
+                <Grid  Background="{StaticResource BordeOpaco}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="{StaticResource AreaPrincipal}" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                    <TextBlock Text="{StaticResource ResponsablePrincipal}" Grid.Row="1" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+
+                    
+                  
+
+                    <ComboBox Width="200" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Style="{StaticResource ComboBox}"/>
+
+                    <ComboBox Width="200"  Grid.Row="1" Grid.Column="1" Style="{StaticResource ComboBox}"/>
+
+
+                    <Grid  Grid.Row="2" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="{StaticResource Responsables}"  VerticalAlignment="Center" Margin="5" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                        <Button Tag="{StaticResource Add}" Style="{StaticResource ButtonImageMiniatura}"  Grid.ColumnSpan="2" HorizontalAlignment="Right"/>
+
+                        <ListBox Grid.Row="1" Grid.ColumnSpan="2" Height="40" MaxHeight="200" Margin="5,0,5,5">
+                            
+                        </ListBox>
+
+                    </Grid>
+
+
+                </Grid>
+
+            </Border>
+        </Grid>
+
+        <Grid Margin="5" Grid.Column="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Background="{StaticResource VerdeBim}" Height="30" Grid.ColumnSpan="2"  >
+                <TextBlock Text="{StaticResource Pruebas}" Foreground="{StaticResource ColorBlanco}" FontWeight="Bold" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5"/>
+            </Grid>
+
+            <Border BorderThickness="1" BorderBrush="Gray" Grid.Row="1" Grid.ColumnSpan="2">
+                <Grid  Background="{StaticResource BordeOpaco}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="{StaticResource ElaboroPDP}" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                    <TextBlock Text="{StaticResource AplicoPDP}" Grid.Row="1" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+
+                    <ComboBox Grid.Column="1" Style="{StaticResource ComboBox}" Margin="5" Width="200"/>
+                    <ComboBox Grid.Row="1" Grid.Column="1" Style="{StaticResource ComboBox}" Margin="5" Width="200"/>
+
+                </Grid>
+
+            </Border>
+        </Grid>
+
+
+        <Grid Grid.Row="1" Grid.Column="1" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Background="{StaticResource VerdeBim}" Height="30" Grid.ColumnSpan="2"  >
+                <TextBlock Text="{StaticResource EquipoSistemas}" Foreground="{StaticResource ColorBlanco}" FontWeight="Bold" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5"/>
+            </Grid>
+
+            <Border BorderThickness="1" BorderBrush="Gray" Grid.Row="1" Grid.ColumnSpan="2">
+                <Grid  Background="{StaticResource BordeOpaco}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="{StaticResource GerenteDesarrollo}" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                    <TextBlock Text="{StaticResource Lider}" Grid.Row="1" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                    <TextBlock Text="{StaticResource Calidad}" Grid.Row="3" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                    <TextBlock Text="{StaticResource AdministradorDB}" Grid.Row="4" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                    <TextBlock Text="{StaticResource ProduccionSistemas}" Grid.Row="5" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                    <TextBlock Text="{StaticResource GerenteProduccion}" Grid.Row="6" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                    <TextBlock Text="{StaticResource GerenteInfraEstructura}" Grid.Row="7" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+                    <TextBlock Text="{StaticResource SubDireccion}" Grid.Row="8" VerticalAlignment="Center" Margin="5" FontWeight="Bold"/>
+
+                    <ComboBox Width="200" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Style="{StaticResource ComboBox}"/>
+
+                    <ComboBox Width="200"  Grid.Row="1" Grid.Column="1" Style="{StaticResource ComboBox}"/>
+
+
+                    <Grid  Grid.Row="2" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="{StaticResource Desarrolladores}"  VerticalAlignment="Center" Margin="5" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                        <Button Tag="{StaticResource Add}" Style="{StaticResource ButtonImageMiniatura}"  Grid.ColumnSpan="2" HorizontalAlignment="Right"/>
+
+                        <ListBox Grid.Row="1" Grid.ColumnSpan="2" Height="40" MaxHeight="200" Margin="5,0,5,5">
+
+                        </ListBox>
+
+                    </Grid>
+
+                    <ComboBox Width="200"  Grid.Row="3" Grid.Column="1" Style="{StaticResource ComboBox}" Margin="5"/>
+                    <ComboBox Width="200"  Grid.Row="4" Grid.Column="1" Style="{StaticResource ComboBox}" Margin="5"/>
+                    <ComboBox Width="200"  Grid.Row="5" Grid.Column="1" Style="{StaticResource ComboBox}" Margin="5"/>
+                    <ComboBox Width="200"  Grid.Row="6" Grid.Column="1" Style="{StaticResource ComboBox}" Margin="5"/>
+                    <ComboBox Width="200"  Grid.Row="7" Grid.Column="1" Style="{StaticResource ComboBox}" Margin="5"/>
+                    <ComboBox Width="200"  Grid.Row="8" Grid.Column="1" Style="{StaticResource ComboBox}" Margin="5"/>
+
+
+                </Grid>
+
+            </Border>
+        </Grid>
+
 
     </Grid>
 </Page>
