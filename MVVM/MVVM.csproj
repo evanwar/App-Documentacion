@@ -76,6 +76,7 @@
     <Compile Include="Convertidores\Convertidores.cs" />
     <Compile Include="Localizador\Locator.cs" />
     <Compile Include="Modelos\Alertas\ModeloAlertas.cs" />
+    <Compile Include="Modelos\DatosGenerales\ModeloDatosGenerales.cs" />
     <Compile Include="Modelos\Inicio\ModeloInicio.cs" />
     <Compile Include="Modelos\ModeloBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,6 +85,13 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WWService\WWService.csproj">
+      <Project>{b6d85256-bee9-46e2-aa50-6411100a0787}</Project>
+      <Name>WWService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">

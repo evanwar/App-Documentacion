@@ -1,0 +1,8 @@
+﻿<Window x:Class="App_Documentacion.Vistas.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Style="{StaticResource StyleWindowLogin}"
+        WindowStartupLocation="CenterScreen"
+        Title="Iniciar Sesiom" Height="300" Width="310"/>
+
+

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App-Documentacion", "App-Do
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVM", "MVVM\MVVM.csproj", "{B08B64D5-9895-486B-B3CE-C2EBC081E7C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WService", "WService\WService.csproj", "{330741D6-5C1E-44C7-BE7A-8CA625E252E5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WWService", "WWService\WWService.csproj", "{B6D85256-BEE9-46E2-AA50-6411100A0787}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{B08B64D5-9895-486B-B3CE-C2EBC081E7C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B08B64D5-9895-486B-B3CE-C2EBC081E7C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B08B64D5-9895-486B-B3CE-C2EBC081E7C1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{330741D6-5C1E-44C7-BE7A-8CA625E252E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{330741D6-5C1E-44C7-BE7A-8CA625E252E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{330741D6-5C1E-44C7-BE7A-8CA625E252E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{330741D6-5C1E-44C7-BE7A-8CA625E252E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6D85256-BEE9-46E2-AA50-6411100A0787}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6D85256-BEE9-46E2-AA50-6411100A0787}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6D85256-BEE9-46E2-AA50-6411100A0787}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6D85256-BEE9-46E2-AA50-6411100A0787}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

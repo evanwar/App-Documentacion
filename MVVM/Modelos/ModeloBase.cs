@@ -66,6 +66,8 @@ namespace MVVM.Modelos
             }
         }
 
+        public int IdUsuario { get; set; }
+
 
         public RelayCommand<String> ComandoEstadoVentana
         {

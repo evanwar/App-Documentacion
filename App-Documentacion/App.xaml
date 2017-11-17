@@ -12,7 +12,7 @@
 
              xmlns:PagesCode="clr-namespace:App_Documentacion.Vistas.Codigo"
 
-             StartupUri="Vistas/Home.xaml">
+             StartupUri="Vistas/Login.xaml">
 
     <Application.Resources>
 
@@ -79,6 +79,15 @@
         <SolidColorBrush Color="#FF145107" x:Key="VerdeBim"/>
 
         <SolidColorBrush Color="White" x:Key="ColorBlanco"/>
+        <SolidColorBrush Color="#2E313A" x:Key="FondoLogin"/>
+
+        <Style TargetType="Window" x:Key="StyleWindowHome">
+
+            <Setter Property="WindowStyle" Value="None"/>
+
+        </Style>
+
+       
 
 
 
@@ -410,11 +419,7 @@
 
 
 
-        <Style TargetType="Window" x:Key="StyleWindowHome">
-
-            <Setter Property="WindowStyle" Value="None"/>
-
-        </Style>
+  
 
 
 
@@ -490,6 +495,19 @@
 
             </Setter>
 
+        </Style>
+
+        <Style TargetType="TextBox" x:Key="TextBoxLeft">
+            <Setter Property="Foreground" Value="{StaticResource ColorBlanco}"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="Width" Value="300"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="{StaticResource FondoLogin}"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BordeOpaco}"/>
         </Style>
 
 
@@ -932,7 +950,37 @@
 
 
 
+        <Style TargetType="Window" x:Key="StyleWindowLogin">
 
+            <Setter Property="WindowStyle" Value="None"/>
+            <Setter Property="AllowsTransparency" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Window}">
+                        <Border BorderThickness="3" CornerRadius="5" BorderBrush="{StaticResource VerdeBim}" Background="{StaticResource BordeOpaco}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="Iniciar Sesión" Style="{StaticResource TextBlockGreen}"/>
+                                <TextBlock Text="Usuario" Grid.Row="1" Style="{StaticResource TextBlockGreen}" HorizontalAlignment="Left"/>
+                                <TextBlock Text="Contraseña" Grid.Row="3" Style="{StaticResource TextBlockGreen}" HorizontalAlignment="Left"/>
+                                
+                                <TextBox Grid.Row="2" Style="{StaticResource TextBoxLeft}"/>
+                                <TextBox Grid.Row="4" Style="{StaticResource TextBoxLeft}"/>
+
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
 
         <!--Paginas-->
 
