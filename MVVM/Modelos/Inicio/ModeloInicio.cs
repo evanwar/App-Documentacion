@@ -39,7 +39,7 @@ namespace MVVM.Modelos.Inicio
 
         public override void Inicializar()
         {
-            base.Inicializar();
+           
         }
 
         #endregion

@@ -12,13 +12,13 @@ namespace WWService.Consultas.Datos_Generales
     {
         Repositorio repositorio;
 
-        public async Task<Respuesta<IEnumerable<tbl_DatosGenerales>>> Get(int usuario = 0, int skip = 0, int take = 0)
+        public  async Task<Respuesta<IEnumerable<tbl_DatosGenerales>>> Get(int usuario = 0, int skip = 0, int take = 0)
         {
             try
             {
                 repositorio = new Repositorio();
 
-                var lista = await repositorio.DatosGeneralesRepository.Get(x => x.intusuarioId == usuario);
+                var lista = await repositorio.DatosGeneralesRepository.Get();
 
                 return new Respuesta<IEnumerable<tbl_DatosGenerales>>(lista, String.Empty);
             }
@@ -26,10 +26,7 @@ namespace WWService.Consultas.Datos_Generales
             {
                 return new Respuesta<IEnumerable<tbl_DatosGenerales>>(null, ex.Message);
             }
-            finally
-            {
-                repositorio.Dispose();
-            }
+         
         }
     }
 }

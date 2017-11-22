@@ -22,7 +22,7 @@ namespace WWService.ModelBD
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            throw new UnintentionalCodeFirstException();
+           
         }
     
         public virtual DbSet<Cat_Areausuaria> Cat_Areausuaria { get; set; }

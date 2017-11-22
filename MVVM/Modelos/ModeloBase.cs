@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using MVVM.Modelos.Alertas;
+using MVVM.Modelos.DatosGenerales;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -112,13 +113,29 @@ namespace MVVM.Modelos
             }
         }
 
+        private ModeloDatosGenerales modeloDatosGenerales;
+
+        public ModeloDatosGenerales ModeloDatosGenerales
+        {
+            get
+            {
+                if (modeloDatosGenerales == null)
+                {
+                    modeloDatosGenerales = new ModeloDatosGenerales();
+                }
+                return modeloDatosGenerales;
+            }
+
+        }
+
+
         #endregion
 
         #region Constructor
 
         public ModeloBase()
         {
-            Inicializar();
+           
         }
 
         #endregion

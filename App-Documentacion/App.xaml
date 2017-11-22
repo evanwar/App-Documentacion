@@ -12,7 +12,7 @@
 
              xmlns:PagesCode="clr-namespace:App_Documentacion.Vistas.Codigo"
 
-             StartupUri="Vistas/Login.xaml">
+             StartupUri="Vistas/Home.xaml">
 
     <Application.Resources>
 
@@ -51,7 +51,11 @@
         <String:String x:Key="Add">/App-Documentacion;component/Imagenes/add.png</String:String>
 
         <String:String x:Key="Cancelar">/App-Documentacion;component/Imagenes/Cancelar.png</String:String>
+
+        <String:String x:Key="Cargando">/App-Documentacion;component/Imagenes/62157.gif</String:String>
+
         
+
         <!--Cadenas-->
         <String:String x:Key="AreaUsuaria">Área Usuaria</String:String>
         <String:String x:Key="AreaPrincipal">Área Principal</String:String>
@@ -501,6 +505,18 @@
             <Setter Property="Foreground" Value="{StaticResource ColorBlanco}"/>
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="Width" Value="300"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="{StaticResource FondoLogin}"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BordeOpaco}"/>
+        </Style>
+
+        <Style TargetType="PasswordBox" x:Key="PasswordLeft">
+            <Setter Property="Foreground" Value="{StaticResource ColorBlanco}"/>
+            <Setter Property="FontSize" Value="14"/>
             <Setter Property="Width" Value="300"/>
             <Setter Property="Height" Value="30"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -972,7 +988,7 @@
                                 <TextBlock Text="Contraseña" Grid.Row="3" Style="{StaticResource TextBlockGreen}" HorizontalAlignment="Left"/>
                                 
                                 <TextBox Grid.Row="2" Style="{StaticResource TextBoxLeft}"/>
-                                <TextBox Grid.Row="4" Style="{StaticResource TextBoxLeft}"/>
+                                <PasswordBox Grid.Row="4" Style="{StaticResource PasswordLeft}"/>
 
                             </Grid>
                         </Border>
